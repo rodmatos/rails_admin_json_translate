@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  mount RailsAdmin::Engine at: '/', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  root to: 'rails_admin/main#dashboard'
 end

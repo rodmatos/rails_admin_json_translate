@@ -1,4 +1,4 @@
-require "rails_admin_json_translate/engine"
+require 'rails_admin_json_translate/engine'
 
 module RailsAdminJsonTranslate
   # Your code goes here...
@@ -12,7 +12,7 @@ module RailsAdmin
     module Fields
       module Types
         class JsonTranslate < RailsAdmin::Config::Fields::Base
-          RailsAdmin::Config::Fields::Types::register(self)
+          RailsAdmin::Config::Fields::Types.register(self)
         end
       end
     end
@@ -21,11 +21,13 @@ end
 
 RailsAdmin::Config::Fields.register_factory do |parent, properties, fields|
   if properties[:name] == :json_translate
-    fields << RailsAdmin::Config::Fields::Types::JsonTranslate.new(parent, properties[:name], properties)
+    fields << RailsAdmin::Config::Fields::Types::JsonTranslate.new(
+      parent,
+      properties[:name],
+      properties
+    )
     true
   else
     false
   end
 end
-
-

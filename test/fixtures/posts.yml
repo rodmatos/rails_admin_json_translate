@@ -1,0 +1,7 @@
+one:
+  title_translations:
+    en: All or nothing
+    nl: Alles of niets
+  body_translations:
+    en: Ruby is a dynamic, reflective, object-oriented, general-purpose programming language. It was designed and developed in the mid-1990s by Yukihiro "Matz" Matsumoto in Japan.
+    nl: Ruby is een programmeertaal, die doorgaans wordt geïnterpreteerd. De taal is ontworpen om snel en makkelijk objectgeoriënteerd te programmeren. Het heeft verschillende mogelijkheden om tekstbestanden te verwerken en kan ook systeemtaken aan.

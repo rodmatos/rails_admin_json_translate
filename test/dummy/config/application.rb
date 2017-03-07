@@ -1,11 +1,10 @@
 require_relative 'boot'
 
-# require 'rails/all'
-require 'action_controller/railtie'
-require 'action_mailer/railtie'
-require 'sprockets/railtie'
+require 'rails/all'
 
 Bundler.require(*Rails.groups)
+require 'rails_admin_json_translate'
+require 'json_translate'
 
 module Dummy
   class Application < Rails::Application

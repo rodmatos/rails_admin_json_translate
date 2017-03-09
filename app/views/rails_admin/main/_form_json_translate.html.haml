@@ -5,13 +5,11 @@
     = form.errors_for(field)
   %ul.nav.nav-tabs{ :style => 'margin-top:5px' }
     - field.available_locales.each do |locale|
-      - klass = "json-translate-pane-#{locale}-#{key}-#{form.object.id}"
+      - klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       %li{ class: ( 'active' if locale == field.current_locale ) }
         %a{ href: '#', data: { toggle: 'tab',  target: ".#{klass}:first"} }= locale
-.tab-content
-  - field.available_locales.each do |locale|
-    - klass = "localized-pane-#{locale}-#{key}-#{form.object.id}"
-    = form.fields_for field.name, field.value_for_locale(locale), wrapper: false do |nested_form|
+  .tab-content
+    - field.available_locales.each do |locale|
+      - klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       .fields.tab-pane{ class: "#{klass} #{'active' if locale == field.current_locale}" }
-.json-translate-help
-  = form.help_for(field)
+        = form.text_area "#{field.name}_#{locale}", field.html_attributes.reverse_merge(data: { richtext: false, options: {}.to_json }).reverse_merge({ value: field.value_for_locale(locale), class: 'form-control', required: field.required })

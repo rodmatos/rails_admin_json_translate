@@ -21,7 +21,7 @@ module RailsAdmin
           end
 
           def value_for_locale(locale)
-            value.try(:locale) || ''
+            @bindings[:object].send(name).try(:[], locale.to_s)
           end
 
           def available_locales

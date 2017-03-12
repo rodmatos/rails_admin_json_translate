@@ -18,7 +18,7 @@ feature 'RailsAdminJsonTranslate' do
 
     tabs = first('.json_translate_type').find('.nav-tabs')
 
-    assert tabs.has_content?('en nl de')
+    assert tabs.has_content?('🇬🇧 English 🇳🇱 Dutch 🇩🇪 German')
   end
 
   scenario 'renders localized data in panes' do
@@ -50,9 +50,9 @@ feature 'RailsAdminJsonTranslate' do
     visit '/post/new'
 
     fill_in('post_title_translations_en', with: 'Title EN')
-    find_by_id('post_title_translations_field').click_on('nl')
+    find_by_id('post_title_translations_field').click_on('🇳🇱 Dutch')
     fill_in('post_title_translations_nl', with: 'Title NL')
-    find_by_id('post_title_translations_field').click_on('de')
+    find_by_id('post_title_translations_field').click_on('🇩🇪 German')
     fill_in('post_title_translations_de', with: 'Title DE')
 
     click_on 'Save'

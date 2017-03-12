@@ -8,7 +8,7 @@
     - field.available_locales.each do |locale|
       - locale_klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       %li{ class: ( 'active' if locale == field.current_locale ) }
-        %a{ href: '#', data: { toggle: 'tab',  target: ".#{locale_klass}:first"} }= locale
+        %a{ href: '#', data: { toggle: 'tab',  target: ".#{locale_klass}:first"} }= "#{EmojiFlag.new(locale)} #{t(locale, scope: :languages)}"
   .tab-content{ class: "#{field.name}-inputs" }
     - field.available_locales.each do |locale|
       - locale_klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"

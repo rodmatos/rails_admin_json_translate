@@ -4,6 +4,7 @@ This gem integrates [json_translate](https://github.com/cfabianski/json_translat
 ![screenshot](https://cloud.githubusercontent.com/assets/75705/23833356/7c448ddc-0744-11e7-83fc-22eb1851d060.png)
 
 [![Travis](https://img.shields.io/travis/richardvenneman/rails_admin_json_translate.svg?style=flat-square)](https://travis-ci.org/richardvenneman/rails_admin_json_translate)
+[![Gem](https://img.shields.io/gem/v/rails_admin_json_translate.svg)](https://rubygems.org/gems/rails_admin_json_translate)
 
 ## Usage
 First make sure you've setup [json_translate](https://github.com/cfabianski/json_translate) for your models. You'll then need update your rails_admin configuration:
@@ -11,10 +12,10 @@ First make sure you've setup [json_translate](https://github.com/cfabianski/json
 ```ruby
 RailsAdmin.config do |config|
   ...
-  
+
   config.model 'Post' do
     configure :title_translations, :json_translate
-    
+
     # Overriding locales
     configure :body_translations, :json_translate do
       locales %w(nl zh)

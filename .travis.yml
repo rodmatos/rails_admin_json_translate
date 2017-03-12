@@ -14,7 +14,7 @@ rvm:
 
 before_script:
   - psql -c 'create database rails_admin_json_translate_test;' -U postgres
-  - cd test/dummy && bundle exec rails db:migrate
+  - cd test/dummy && bundle exec rails db:migrate && cd ../..
 
 script:
   - bundle exec rails test

@@ -10,6 +10,8 @@ RailsAdmin.config do |config|
 
   config.model 'Post' do
     configure :title_translations, :json_translate
-    configure :body_translations, :json_translate
+    configure :body_translations, :json_translate do
+      locales %w(nl zh)
+    end
   end
 end

@@ -5,12 +5,12 @@
   .json-translate-errors
     = form.errors_for(field)
   %ul.nav.nav-tabs{ :style => 'margin-top:5px' }
-    - field.available_locales.each do |locale|
+    - field.locales.each do |locale|
       - locale_klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       %li{ class: ( 'active' if locale == field.current_locale ) }
         %a{ href: '#', data: { toggle: 'tab',  target: ".#{locale_klass}:first"} }= "#{EmojiFlag.new(locale)} #{t(locale, scope: :languages)}"
   .tab-content{ class: "#{field.name}-inputs" }
-    - field.available_locales.each do |locale|
+    - field.locales.each do |locale|
       - locale_klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       .fields.tab-pane{ class: "#{locale_klass} #{'active' if locale == field.current_locale}" }
         = form.text_area "#{field.name}_#{locale}", field.html_attributes.reverse_merge(data: { locale: "#{locale}", richtext: false, options: {}.to_json }).reverse_merge({ value: field.value_for_locale(locale), class: "form-control json-translate-input", required: field.required })

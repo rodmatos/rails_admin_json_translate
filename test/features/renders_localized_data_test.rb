@@ -21,6 +21,14 @@ feature 'RailsAdminJsonTranslate' do
     assert tabs.has_content?('🇬🇧 English 🇳🇱 Dutch 🇩🇪 German')
   end
 
+  scenario 'overridden post locales' do
+    visit '/post/new'
+
+    tabs = find('.json_translate_type:last-of-type .nav-tabs')
+
+    assert tabs.has_content?('🇳🇱 Dutch 🇨🇳 Chinese')
+  end
+
   scenario 'renders localized data in panes' do
     visit "/post/#{@post.id}/edit"
 

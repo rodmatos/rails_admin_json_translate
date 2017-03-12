@@ -17,7 +17,11 @@ module RailsAdmin
           end
 
           register_instance_option :pretty_value do
-            value_for_locale(I18n.locale)
+            value_for_locale(current_locale)
+          end
+
+          register_instance_option :locales do
+            I18n.available_locales
           end
 
           def value_for_locale(locale)
@@ -27,12 +31,8 @@ module RailsAdmin
             ''
           end
 
-          def available_locales
-            I18n.available_locales
-          end
-
           def current_locale
-            I18n.locale
+            value_for_locale(I18n.locale).blank? ? locales.first : I18n.locale
           end
         end
       end

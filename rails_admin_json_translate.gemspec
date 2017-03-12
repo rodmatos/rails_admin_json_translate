@@ -17,8 +17,8 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'pg', '~> 0.20'
-  s.add_dependency 'rails', '~> 5.0.0', '>= 5.0.0.1'
-  s.add_dependency 'rails_admin', '~> 1.1'
+  s.add_dependency 'rails', '>= 4.2', '< 6.0'
+  s.add_dependency 'rails_admin', '>= 0.6.2', '< 2.0'
   s.add_dependency 'json_translate', '~> 3.0'
   s.add_dependency 'i18n-language-translations', '~> 0.0.2'
   s.add_dependency 'emoji_flag', '~> 0.0.1'

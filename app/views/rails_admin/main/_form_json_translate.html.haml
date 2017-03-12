@@ -4,7 +4,7 @@
   = form.hidden_field field.name, { id: "#{klass}" }
   .json-translate-errors
     = form.errors_for(field)
-  %ul.nav.nav-tabs{ :style => 'margin-top:5px' }
+  %ul.nav.nav-tabs{ style: 'margin-top: 0' }
     - field.locales.each do |locale|
       - locale_klass = "json-translate-pane-#{field.name}-#{locale}-#{form.object.id}"
       %li{ class: ( 'active' if locale == field.current_locale ) }

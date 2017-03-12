@@ -5,6 +5,14 @@ feature 'RailsAdminJsonTranslate' do
     @post = posts(:one)
   end
 
+  scenario 'renders localized data in index' do
+    visit '/post'
+
+    element = find('.post_row:last-of-type .title_translations_field')
+
+    assert_equal 'All or nothing', element.text
+  end
+
   scenario 'renders all post locales' do
     visit '/post/new'
 

@@ -31,4 +31,24 @@ feature 'RailsAdminJsonTranslate' do
       assert_equal 'Alles of niets', value
     end
   end
+
+  scenario 'serializes localized data as JSON', js: true do
+    data = {
+      en: 'Title EN',
+      nl: 'Title NL',
+      de: 'Title DE'
+    }
+
+    visit '/post/new'
+
+    fill_in('post_title_translations_en', with: 'Title EN')
+    find_by_id('post_title_translations_field').click_on('nl')
+    fill_in('post_title_translations_nl', with: 'Title NL')
+    find_by_id('post_title_translations_field').click_on('de')
+    fill_in('post_title_translations_de', with: 'Title DE')
+
+    click_on 'Save'
+
+    assert_equal data.to_json, Post.last.title_translations
+  end
 end

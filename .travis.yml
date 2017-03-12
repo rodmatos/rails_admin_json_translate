@@ -11,7 +11,7 @@ services:
 
 before_script:
   - psql -c 'create database rails_admin_json_translate_test;' -U postgres
-  - bundle exec rake db:migrate
+  - cd test/dummy && bundle exec rails db:migrate
 
 script:
   - bundle exec rails test

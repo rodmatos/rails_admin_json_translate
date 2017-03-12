@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rails_admin', '~> 1.1.0'
   s.add_dependency 'json_translate', '~> 3.0.1'
 
-  s.add_development_dependency 'capybara', '~> 2.12'
+  s.add_development_dependency 'minitest-rails-capybara', '~> 3.0.1'
   s.add_development_dependency 'poltergeist', '~> 1.13'
   s.add_development_dependency 'launchy'
 end

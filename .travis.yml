@@ -1,13 +1,16 @@
 language: ruby
-cache: bundler
+dist: trusty
+
+addons:
+  postgresql: 9.6
+
+services:
+  - postgresql
 
 rvm:
   - 2.2.6
   - 2.3.1
   - 2.4.0
-
-services:
-  - postgresql
 
 before_script:
   - psql -c 'create database rails_admin_json_translate_test;' -U postgres
@@ -15,3 +18,5 @@ before_script:
 
 script:
   - bundle exec rails test
+
+cache: bundler

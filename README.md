@@ -24,7 +24,7 @@ RailsAdmin.config do |config|
 end
 ```
 
-By default, rails_admin_json_translate uses the `I18n.available_locales` locales to create the tabbed interface. However you can specify the locales to use on a per-model basis as shown above.
+By default, rails_admin_json_translate uses the `I18n.available_locales` locales to create the tabbed interface. However you can specify the locales to use on a per-field basis as shown above.
 
 ## Installation
 Add this line to your application's Gemfile:

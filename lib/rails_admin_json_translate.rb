@@ -26,7 +26,10 @@ module RailsAdmin
 
           def value_for_locale(locale)
             val = @bindings[:object].send(name)
-            val ? JSON.parse(val).try(:[], locale.to_s) : ''
+            return '' unless val
+
+            val = JSON.parse(val) unless val.is_a?(Hash)
+            val.try(:[], locale.to_s)
           rescue JSON::ParserError
             ''
           end

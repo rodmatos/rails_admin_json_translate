@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.x.x (unreleased)
+- Inherit field from Text type
+
 ## 0.2.0 (2017-03-26)
 - Fix error initialising with nil value
 - Loosen pg dependency

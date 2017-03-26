@@ -9,7 +9,7 @@ module RailsAdmin
   module Config
     module Fields
       module Types
-        class JsonTranslate < RailsAdmin::Config::Fields::Base
+        class JsonTranslate < RailsAdmin::Config::Fields::Types::Text
           RailsAdmin::Config::Fields::Types.register(:json_translate, self)
 
           register_instance_option :partial do

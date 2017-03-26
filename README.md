@@ -18,7 +18,7 @@ RailsAdmin.config do |config|
 
     # Overriding locales
     configure :body_translations, :json_translate do
-      locales %w(nl zh)
+      locales [:nl, :zh]
     end
   end
 end

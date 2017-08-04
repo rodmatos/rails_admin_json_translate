@@ -45,9 +45,9 @@ feature 'RailsAdminJsonTranslate' do
 
   scenario 'serializes localized data as JSON', js: true do
     data = {
-      en: 'Title EN',
-      nl: 'Title NL',
-      de: 'Title DE'
+      'en' => 'Title EN',
+      'nl' => 'Title NL',
+      'de' => 'Title DE'
     }
 
     visit '/post/new'
@@ -60,6 +60,6 @@ feature 'RailsAdminJsonTranslate' do
 
     click_on 'Save'
 
-    assert_equal data.to_json, Post.last.title_translations
+    assert_equal data, Post.last.title_translations
   end
 end

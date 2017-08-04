@@ -24,6 +24,14 @@ module RailsAdmin
             I18n.available_locales
           end
 
+          def parse_value(value)
+            value.present? ? JSON.parse(value) : nil
+          end
+
+          def parse_input(params)
+            params[name] = parse_value(params[name]) if params[name].is_a?(::String)
+          end
+
           def value_for_locale(locale)
             val = @bindings[:object].send(name)
             return '' unless val

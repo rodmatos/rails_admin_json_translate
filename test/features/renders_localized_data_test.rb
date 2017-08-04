@@ -41,11 +41,6 @@ feature 'RailsAdminJsonTranslate' do
       value = find_by_id('post_title_translations_nl').value
       assert_equal 'Alles of niets', value
     end
-
-    within(".json-translate-pane-title_translations-nl-#{@post.id}") do
-      value = find_by_id('post_title_translations_nl').value
-      assert_equal 'Alles of niets', value
-    end
   end
 
   scenario 'serializes localized data as JSON', js: true do

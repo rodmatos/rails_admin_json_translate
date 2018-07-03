@@ -25,7 +25,12 @@ module RailsAdmin
           end
 
           def parse_value(value)
-            value.present? ? JSON.generate("#{I18n.locale}" => value) : nil
+            begin
+              json = JSON.parse(value)
+            rescue => exception
+              json = JSON.generate("#{I18n.locale}" => value)
+            end
+            json
           end
 
           def parse_input(params)
